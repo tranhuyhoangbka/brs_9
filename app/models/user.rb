@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
+  validates :username, presence: true
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
   has_many :comments
   has_many :likes
   has_many :reviews
