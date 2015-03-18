@@ -1,0 +1,14 @@
+<% provide(:title, "category") %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>List all category</h1>
+    <ul class="categories_list">
+      <div class="admin-new-category">
+        <%= link_to "Create new category", new_category_path %>
+      </div>
+      <div id="categories"> 
+        <%= render @categories %>
+      </div>
+    </ul>  
+  </div>
+</div> 
