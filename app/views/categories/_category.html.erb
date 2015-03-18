@@ -1,0 +1,13 @@
+<li id="category-<%= category.id %>">
+<div class="category-info">
+  <div class="box-image">
+    <%= image_tag category.image.url if category.image? %>
+  </div>
+  <span><%= category.name %></span>
+</div>
+<div class="manage-category">
+  <%= link_to "Edit", edit_category_path(category) %> |
+  <%= link_to "delete", category, method: :delete,
+                                  data: {confirm: "You sure?"} %>
+</div>
+</li>
