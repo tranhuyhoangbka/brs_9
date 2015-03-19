@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  mount_uploader :image, ImageUploader
+
   has_many :comments
   has_many :likes
   has_many :reviews
@@ -12,4 +14,8 @@ class User < ActiveRecord::Base
   has_many :relationships
   has_many :activities
   has_many :requests
+
+  def is_admin?
+    self.role == "admin"
+  end
 end
