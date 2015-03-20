@@ -1,0 +1,8 @@
+<tr>
+  <td class="text-center"><%= request.book_name %></td>
+  <td class="text-center"><%= request.book_url %></td>  
+  <td class="text-center"><%= request.state %></td>
+  <td class="text-center">
+    <%= link_to "Delete", request, method: :delete, data: {confirm: "Are you sure?"} %>
+  </td>  
+</tr>
